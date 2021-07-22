@@ -1,0 +1,91 @@
+:root{
+    --color-bg-calendar: #1b1e22;
+    --color-cell: #e3e3e3;
+    --color-cell-disabled:#424649;
+    --color1: #b5e6f5;
+    --color2: #b0edff;
+    --color3: #9bd0e0;
+    --color4: #8bcde0;
+    --color5: #abebff;
+    --color6: #00d1e6;
+    --TipoDeLetra: "Century Gothic";
+}
+
+.calendar{
+    font-family:var(--TipoDeLetra) ;
+    padding: 10px 0px;
+    background-color: var(--color3);
+    border-radius: 3px;
+    width: 400px;
+    height: 400px;
+}
+
+.calendar__header{
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+
+.calendar .control{
+    color:white;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0px 5px;
+    font-size: 1em;
+}
+
+.grid__header, .grid__body{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.grid__header{
+    color:white;
+    margin-bottom: 20px;
+}
+
+.grid__body{
+    grid-auto-rows: 45px;
+    color: var(--color-cell);
+ 
+}
+
+.grid__cell{ /*preferible no centrar*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid__cell--gd{
+    cursor: pointer;
+    color: #424649;
+    border: 0.5px solid white;
+    background-color: #6cb6ca;
+    margin:1.5px;
+}
+
+.grid__cell--selected{
+    color:var(--color-bg-calendar);
+    background-color: rgb(78, 142, 148);
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.2);
+    transition: ease-out 0.2s;
+    
+}
+
+.grid__cell--disabled{
+    background-color:var(--color4);
+    color: rgb(146, 146, 146);
+    cursor: not-allowed;
+}
